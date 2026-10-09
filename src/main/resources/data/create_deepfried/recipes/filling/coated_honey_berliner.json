@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "create_deepfried:coated_berliner"
+    },
+    {
+      "amount": 250,
+      "fluidTag": "forge:honey"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_deepfried:coated_honey_berliner"
+    }
+  ]
+}

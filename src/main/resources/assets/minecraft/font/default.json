@@ -1,0 +1,103 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/south_american.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uEFf8"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/north_american.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uECD2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/africa.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uFDD5"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/oceania.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uFCF2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/asia.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uE001"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/japan.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uE002"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/european.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uEFD2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/italy.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uFDD4"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/greece.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uFDD3"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/germany.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uFDD2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/united_kingdom.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uFDD1"
+      ]
+    }
+  ]
+}

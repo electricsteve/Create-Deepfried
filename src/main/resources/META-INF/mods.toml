@@ -1,0 +1,41 @@
+modLoader = "javafml"
+loaderVersion = "[43,)"
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "create_deepfried"
+version = "0.1.2"
+displayName = "Create: Deepfried"
+logoFile = "logo.png"
+authors = "Pyzpre, Vitecekuwu"
+description = "Adds extra deepfrying recipes to Create: Bitterballen"
+
+[[dependencies.create_deepfried]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.2,1.20)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.create_deepfried]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.create_deepfried]]
+modId = "create"
+mandatory = true
+versionRange = "[0.5.1.i,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.create_deepfried]]
+modId = "create_bic_bit"
+mandatory = true
+versionRange = "[1.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+
+

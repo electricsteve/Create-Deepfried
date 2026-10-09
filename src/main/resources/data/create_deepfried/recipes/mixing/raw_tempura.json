@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "create:dough"
+    },
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "create_deepfried:vegetables"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_deepfried:raw_tempura"
+    }
+  ]
+}
