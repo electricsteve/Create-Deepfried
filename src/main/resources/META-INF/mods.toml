@@ -4,10 +4,10 @@ license = "All Rights Reserved"
 
 [[mods]]
 modId = "create_deepfried"
-version = "0.1.2"
+version = "0.1.3"
 displayName = "Create: Deepfried"
-logoFile = "logo.png"
-authors = "Pyzpre, Vitecekuwu"
+logoFile = "icon.png"
+authors = "Pyzpre, Vitecekuwu, ElectricSteve"
 description = "Adds extra deepfrying recipes to Create: Bitterballen"
 
 [[dependencies.create_deepfried]]
@@ -19,7 +19,7 @@ side = "BOTH"
 [[dependencies.create_deepfried]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[43,)"
 ordering = "NONE"
 side = "BOTH"
 

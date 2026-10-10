@@ -53,6 +53,7 @@ public class CreateDeepfriedTabs {
     };
 
     public static void register() {
+        CreateDeepfried.REGISTRATE.creativeModeTab(() -> CREATIVE_TAB);
     }
 }
 

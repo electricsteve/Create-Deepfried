@@ -22,8 +22,8 @@ public class CreateDeepfried {
 
     public CreateDeepfried() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ItemRegistry.register();
         CreateDeepfriedTabs.register();
+        ItemRegistry.register();
         REGISTRATE.registerEventListeners(eventBus);
         MinecraftForge.EVENT_BUS.register(this);
     }
