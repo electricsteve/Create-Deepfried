@@ -9,7 +9,10 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import pyzpre.createdeepfried.item.asian.Asia;
 import pyzpre.createdeepfried.item.asian.Japan;
 import pyzpre.createdeepfried.item.europe.*;
+import pyzpre.createdeepfried.item.functional.north_american.GlowBerryDonut;
 import pyzpre.createdeepfried.item.functional.south_american.Yuca;
+import pyzpre.createdeepfried.item.functional.unknown.LavaChicken;
+import pyzpre.createdeepfried.item.north_american.Canada;
 import pyzpre.createdeepfried.item.north_american.NorthAmerica;
 import pyzpre.createdeepfried.item.south_american.SouthAmerica;
 
@@ -84,6 +87,39 @@ public class ItemRegistry {
     public static final ItemEntry<UnitedKingdom> FRIED_CHICKEN = REGISTRATE.item("fried_chicken", UnitedKingdom::new)
         .properties(p -> p.food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f).meat().build()))
         .register();
+    public static final ItemEntry<LavaChicken> LAVA_CHICKEN = REGISTRATE.item("lava_chicken", LavaChicken::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3600, 0), 1F).build()))
+        .register();
+    public static final ItemEntry<Canada> CHEESE_CURD = REGISTRATE.item("cheese_curd", Canada::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.7f).build()))
+        .register();
+    public static final ItemEntry<NorthAmerica> RAW_DONUT = REGISTRATE.item("raw_donut", NorthAmerica::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).build()))
+        .register();
+    public static final ItemEntry<NorthAmerica> DONUT = REGISTRATE.item("donut", NorthAmerica::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(7).saturationMod(0.2f).build()))
+        .register();
+    public static final ItemEntry<NorthAmerica> COATED_DONUT = REGISTRATE.item("coated_donut", NorthAmerica::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.3f).build()))
+        .register();
+    public static final ItemEntry<NorthAmerica> HONEY_GLAZED_DONUT = REGISTRATE.item("honey_glazed_donut", NorthAmerica::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(9).saturationMod(0.5f).build()))
+        .register();
+    public static final ItemEntry<NorthAmerica> CHOCOLATE_GLAZED_DONUT = REGISTRATE.item("chocolate_glazed_donut", NorthAmerica::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(11).saturationMod(0.8f).build()))
+        .register();
+    public static final ItemEntry<NorthAmerica> SWEET_BERRY_HONEY_GLAZED_DONUT = REGISTRATE.item("sweet_berry_honey_glazed_donut", NorthAmerica::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(13).saturationMod(0.8f).build()))
+        .register();
+    public static final ItemEntry<NorthAmerica> SWEET_BERRY_CHOCOLATE_GLAZED_DONUT = REGISTRATE.item("sweet_berry_chocolate_glazed_donut", NorthAmerica::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(15).saturationMod(0.8f).build()))
+        .register();
+    public static final ItemEntry<GlowBerryDonut> GLOW_BERRY_HONEY_GLAZED_DONUT = REGISTRATE.item("glow_berry_honey_glazed_donut", GlowBerryDonut::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(13).saturationMod(0.8f).effect(() -> new MobEffectInstance(MobEffects.GLOWING, 100, 0), 1F).build()))
+        .register();
+    public static final ItemEntry<GlowBerryDonut> GLOW_BERRY_CHOCOLATE_GLAZED_DONUT = REGISTRATE.item("glow_berry_chocolate_glazed_donut", GlowBerryDonut::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(15).saturationMod(0.8f).effect(() -> new MobEffectInstance(MobEffects.GLOWING, 100, 0), 1F).build()))
+        .register();
 
 
     //Farmers Delight
@@ -101,6 +137,12 @@ public class ItemRegistry {
         .register();
     public static final ItemEntry<NorthAmerica> BLOOMING_ONION = REGISTRATE.item("blooming_onion", NorthAmerica::new)
         .properties(p -> p.food((new FoodProperties.Builder()).nutrition(7).saturationMod(0.8f).build()))
+        .register();
+    public static final ItemEntry<Italy> RAW_ARANCINI = REGISTRATE.item("raw_arancini", Italy::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.2f).build()))
+        .register();
+    public static final ItemEntry<Italy> ARANCINI = REGISTRATE.item("arancini", Italy::new)
+        .properties(p -> p.food((new FoodProperties.Builder()).nutrition(10).saturationMod(0.8f).build()))
         .register();
 
     public static void register() {

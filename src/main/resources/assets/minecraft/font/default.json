@@ -6,7 +6,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uEFf8"
+        "\uE592"
       ]
     },
     {
@@ -15,7 +15,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uECD2"
+        "\uE593"
       ]
     },
     {
@@ -24,7 +24,25 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uFDD5"
+        "\uE58E"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/minecraft.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uE588"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "create_deepfried:font/canada.png",
+      "ascent": 9,
+      "height": 12,
+      "chars": [
+        "\uE594"
       ]
     },
     {
@@ -33,7 +51,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uFCF2"
+        "\uE591"
       ]
     },
     {
@@ -42,7 +60,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uE001"
+        "\uE58F"
       ]
     },
     {
@@ -51,7 +69,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uE002"
+        "\uE590"
       ]
     },
     {
@@ -60,7 +78,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uEFD2"
+        "\uE589"
       ]
     },
     {
@@ -69,7 +87,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uFDD4"
+        "\uE58D"
       ]
     },
     {
@@ -78,7 +96,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uFDD3"
+        "\uE58C"
       ]
     },
     {
@@ -87,7 +105,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uFDD2"
+        "\uE58B"
       ]
     },
     {
@@ -96,7 +114,7 @@
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uFDD1"
+        "\uE58A"
       ]
     }
   ]

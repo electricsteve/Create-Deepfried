@@ -1,0 +1,19 @@
+{
+  "type": "create_bic_bit:deep_frying",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "amount": 125,
+      "fluid": "minecraft:lava"
+    }
+  ],
+  "processingTime": 100,
+  "results": [
+    {
+      "item": "create_deepfried:lava_chicken"
+    }
+  ]
+}

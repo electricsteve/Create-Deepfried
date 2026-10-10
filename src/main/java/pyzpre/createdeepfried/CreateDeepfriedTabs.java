@@ -1,59 +1,75 @@
 package pyzpre.createdeepfried;
 
-import com.pyzpre.create_bic_bit.index.FluidRegistry;
+import com.pyzpre.createbitterballen.index.FluidRegistry;
 
-import net.minecraft.core.NonNullList;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 
 import pyzpre.createdeepfried.index.ItemRegistry;
 
 public class CreateDeepfriedTabs {
-    public static final CreativeModeTab CREATIVE_TAB = new CreativeModeTab("create_deepfried.deepfried") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(FluidRegistry.FRYING_OIL.getBucket().get());
-        }
+    private static final DeferredRegister<CreativeModeTab> TAB_REGISTER =
+        DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "create_deepfried");
 
-        @Override
-        public void fillItemList(NonNullList<ItemStack> items) {
-            items.clear();
-            items.add(new ItemStack(ItemRegistry.RAW_CORN_DOG.get()));
-            items.add(new ItemStack(ItemRegistry.CORN_DOG.get()));
-            items.add(new ItemStack(ItemRegistry.RAW_CHICKEN_NUGGETS.get()));
-            items.add(new ItemStack(ItemRegistry.CHICKEN_NUGGETS.get()));
-            items.add(new ItemStack(ItemRegistry.YUCA.get()));
-            items.add(new ItemStack(ItemRegistry.YUCA_FRIES.get()));
-            items.add(new ItemStack(ItemRegistry.RAW_SPRINGROLL.get()));
-            items.add(new ItemStack(ItemRegistry.SPRINGROLL.get()));
-            items.add(new ItemStack(ItemRegistry.RAW_TEMPURA.get()));
-            items.add(new ItemStack(ItemRegistry.TEMPURA.get()));
-            items.add(new ItemStack(ItemRegistry.CALAMARI.get()));
-            items.add(new ItemStack(ItemRegistry.BERLINER.get()));
-            items.add(new ItemStack(ItemRegistry.HONEY_BERLINER.get()));
-            items.add(new ItemStack(ItemRegistry.CHOCOLATE_BERLINER.get()));
-            items.add(new ItemStack(ItemRegistry.COATED_BERLINER.get()));
-            items.add(new ItemStack(ItemRegistry.COATED_HONEY_BERLINER.get()));
-            items.add(new ItemStack(ItemRegistry.COATED_CHOCOLATE_BERLINER.get()));
-            items.add(new ItemStack(ItemRegistry.APPLE_SLICES.get()));
-            items.add(new ItemStack(ItemRegistry.APFELKUCHLE.get()));
-            items.add(new ItemStack(ItemRegistry.DEEPFRIED_CHOCOLATE_BAR.get()));
-            items.add(new ItemStack(ItemRegistry.FISH_AND_CHIPS.get()));
-            items.add(new ItemStack(ItemRegistry.FRIED_CHICKEN.get()));
-            // Check if Farmer's Delight is loaded before adding these foods
-            if (ModList.get().isLoaded("farmersdelight")) {
-                items.add(new ItemStack(ItemRegistry.RAW_ONION_RINGS.get()));
-                items.add(new ItemStack(ItemRegistry.ONION_RINGS.get()));
-                items.add(new ItemStack(ItemRegistry.BLOOMING_ONION.get()));
-                items.add(new ItemStack(ItemRegistry.RAW_PANZEROTTO.get()));
-                items.add(new ItemStack(ItemRegistry.PANZEROTTO.get()));
-            }
-        }
-    };
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
+    public static final RegistryObject<CreativeModeTab> DEEPFRIED =
+        TAB_REGISTER.register("deepfried",
+            () -> CreativeModeTab.builder()
+                .title(Component.translatable("item_group.create_deepfried.deepfried"))
+                .icon(() -> FluidRegistry.FRYING_OIL.getBucket().get().getDefaultInstance())
+                .displayItems((parameters, output) -> {
+                    output.accept(ItemRegistry.RAW_CORN_DOG.get());
+                    output.accept(ItemRegistry.CORN_DOG.get());
+                    output.accept(ItemRegistry.RAW_CHICKEN_NUGGETS.get());
+                    output.accept(ItemRegistry.CHICKEN_NUGGETS.get());
+                    output.accept(ItemRegistry.YUCA.get());
+                    output.accept(ItemRegistry.YUCA_FRIES.get());
+                    output.accept(ItemRegistry.CHEESE_CURD.get());
+                    output.accept(ItemRegistry.RAW_SPRINGROLL.get());
+                    output.accept(ItemRegistry.SPRINGROLL.get());
+                    output.accept(ItemRegistry.RAW_TEMPURA.get());
+                    output.accept(ItemRegistry.TEMPURA.get());
+                    output.accept(ItemRegistry.CALAMARI.get());
+                    output.accept(ItemRegistry.RAW_DONUT.get());
+                    output.accept(ItemRegistry.DONUT.get());
+                    output.accept(ItemRegistry.COATED_DONUT.get());
+                    output.accept(ItemRegistry.HONEY_GLAZED_DONUT.get());
+                    output.accept(ItemRegistry.CHOCOLATE_GLAZED_DONUT.get());
+                    output.accept(ItemRegistry.SWEET_BERRY_HONEY_GLAZED_DONUT.get());
+                    output.accept(ItemRegistry.SWEET_BERRY_CHOCOLATE_GLAZED_DONUT.get());
+                    output.accept(ItemRegistry.GLOW_BERRY_HONEY_GLAZED_DONUT.get());
+                    output.accept(ItemRegistry.GLOW_BERRY_CHOCOLATE_GLAZED_DONUT.get());
+                    output.accept(ItemRegistry.BERLINER.get());
+                    output.accept(ItemRegistry.HONEY_BERLINER.get());
+                    output.accept(ItemRegistry.CHOCOLATE_BERLINER.get());
+                    output.accept(ItemRegistry.COATED_BERLINER.get());
+                    output.accept(ItemRegistry.COATED_HONEY_BERLINER.get());
+                    output.accept(ItemRegistry.COATED_CHOCOLATE_BERLINER.get());
+                    output.accept(ItemRegistry.APPLE_SLICES.get());
+                    output.accept(ItemRegistry.APFELKUCHLE.get());
+                    output.accept(ItemRegistry.DEEPFRIED_CHOCOLATE_BAR.get());
+                    output.accept(ItemRegistry.FISH_AND_CHIPS.get());
+                    output.accept(ItemRegistry.FRIED_CHICKEN.get());
+                    output.accept(ItemRegistry.LAVA_CHICKEN.get());
+                    // Check if Farmer's Delight is loaded before adding these foods
+                    if (ModList.get().isLoaded("farmersdelight")) {
+                        output.accept(ItemRegistry.RAW_ONION_RINGS.get());
+                        output.accept(ItemRegistry.ONION_RINGS.get());
+                        output.accept(ItemRegistry.BLOOMING_ONION.get());
+                        output.accept(ItemRegistry.RAW_PANZEROTTO.get());
+                        output.accept(ItemRegistry.PANZEROTTO.get());
+                        output.accept(ItemRegistry.RAW_ARANCINI.get());
+                        output.accept(ItemRegistry.ARANCINI.get());
+                    }
+                })
+                .build());
 
-    public static void register() {
-        CreateDeepfried.REGISTRATE.creativeModeTab(() -> CREATIVE_TAB);
+    public static void register(IEventBus modEventBus) {
+        TAB_REGISTER.register(modEventBus);
     }
 }
-

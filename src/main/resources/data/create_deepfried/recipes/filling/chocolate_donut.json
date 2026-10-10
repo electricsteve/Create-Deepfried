@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "create_deepfried:donut"
+    },
+    {
+      "amount": 250,
+      "fluid": "create:chocolate"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_deepfried:chocolate_glazed_donut"
+    }
+  ]
+}
