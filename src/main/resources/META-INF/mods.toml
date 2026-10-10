@@ -1,36 +1,36 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-license = "All Rights Reserved"
+license = "${mod_license}"
 
 [[mods]]
-modId = "create_deepfried"
-version = "0.1.4"
-displayName = "Create: Deepfried"
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
 logoFile = "icon.png"
-authors = "Pyzpre, ElectricSteve"
-description = "Adds extra deepfrying recipes to Create: Bitterballen"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
 
-[[dependencies.create_deepfried]]
+[[dependencies.${mod_id}]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.20.1]"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies.create_deepfried]]
+[[dependencies.${mod_id}]]
 modId = "forge"
 mandatory = true
 versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.create_deepfried]]
+[[dependencies.${mod_id}]]
 modId = "create"
 mandatory = true
 versionRange = "[6.0.8,6.1.0)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.create_deepfried]]
+[[dependencies.${mod_id}]]
 modId = "create_bic_bit"
 mandatory = true
 versionRange = "[1.0.4,)"
