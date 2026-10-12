@@ -1,0 +1,20 @@
+package com.pyzpre.createdeepfried.item.south_american;
+
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+
+import java.util.List;
+
+public class SouthAmerica extends Item {
+    public SouthAmerica(Properties properties) {
+        super(properties);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(itemStack, context, tooltip, flag);
+        tooltip.add(Component.translatable("item.create_deepfried.south_american"));
+    }
+}

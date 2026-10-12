@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "create_deepfried:chocolate_glazed_donut"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "results": [
+    {
+      "id": "create_deepfried:sweet_berry_chocolate_glazed_donut"
+    }
+  ]
+}

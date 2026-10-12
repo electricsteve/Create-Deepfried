@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "create:dough"
+    },
+    {
+      "tag": "create_deepfried:springroll_ingredient"
+    },
+    {
+      "item": "minecraft:porkchop"
+    }
+  ],
+  "results": [
+    {
+      "id": "create_deepfried:raw_springroll",
+      "count": 2
+    }
+  ]
+}

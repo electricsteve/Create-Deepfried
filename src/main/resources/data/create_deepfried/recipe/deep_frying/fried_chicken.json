@@ -1,0 +1,19 @@
+{
+  "type": "create_bic_bit:deep_frying",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 125,
+      "fluid": "create_bic_bit:frying_oil"
+    }
+  ],
+  "results": [
+    {
+      "id": "create_deepfried:fried_chicken"
+    }
+  ]
+}

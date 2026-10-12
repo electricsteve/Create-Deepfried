@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "create_deepfried:berliner"
+    },
+    {
+      "type": "fluid_tag",
+      "amount": 250,
+      "fluid_tag": "c:honey"
+    }
+  ],
+  "results": [
+    {
+      "id": "create_deepfried:honey_filled_berliner"
+    }
+  ]
+}
