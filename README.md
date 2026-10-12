@@ -46,10 +46,6 @@
 
 If it's a big technical feature it will probably be handed down to C:Bitterballen. If it's a deepfried snack, then it belongs in this mod.
 
-<strong>When version 1.xx?</strong>
-
-We're only on the versions that C:Bitterballen is on, which for the foreseeable future is 1.20.1 and 1.19.2.
-
  
 \
 <strong>Dependencies:</strong>
