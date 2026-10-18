@@ -1,4 +1,4 @@
-package com.pyzpre.createdeepfried.item.functional.unknown;
+package com.pyzpre.createdeepfried.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -9,7 +9,7 @@ import net.minecraft.world.item.TooltipFlag;
 
 import java.util.List;
 
-import static com.pyzpre.createdeepfried.item.functional.TooltipEffectHelper.vanillaEffectLine;
+import static com.pyzpre.createdeepfried.item.TooltipEffectHelper.vanillaEffectLine;
 
 public class LavaChicken extends Item {
     public LavaChicken(Properties p_41383_) {
@@ -18,7 +18,6 @@ public class LavaChicken extends Item {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(itemStack, context, tooltip, flag);
-        tooltip.add(Component.translatable("item.create_deepfried.minecraft"));
         MobEffectInstance inst = new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20 * 180, 0);
         tooltip.add(vanillaEffectLine(
                 inst,

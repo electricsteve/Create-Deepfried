@@ -1,4 +1,4 @@
-package com.pyzpre.createdeepfried.item.functional;
+package com.pyzpre.createdeepfried.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;

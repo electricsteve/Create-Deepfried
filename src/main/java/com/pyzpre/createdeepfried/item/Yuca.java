@@ -1,4 +1,4 @@
-package com.pyzpre.createdeepfried.item.functional.south_american;
+package com.pyzpre.createdeepfried.item;
 
 import com.simibubi.create.foundation.item.TooltipHelper;
 import net.createmod.catnip.lang.FontHelper;
@@ -22,7 +22,6 @@ public class Yuca extends Item {
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
         super.appendHoverText(itemStack, context, tooltip, flag);
-        tooltip.add(Component.translatable("item.create_deepfried.south_american"));
         FontHelper.Palette palette = FontHelper.Palette.STANDARD_CREATE;
 
         // Add a "Hold Shift" message for extended tooltip using the new translation method

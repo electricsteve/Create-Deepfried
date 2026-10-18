@@ -28,7 +28,7 @@ public class CreateDeepfried {
     public CreateDeepfried(IEventBus eventBus) {
         REGISTRATE.registerEventListeners(eventBus);
 
-        ItemRegistry.register();
+        ItemRegistry.register(eventBus);
         LootTables.register();
         CreateDeepfriedTabs.register(eventBus);
 
