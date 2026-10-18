@@ -2,119 +2,13 @@
   "providers": [
     {
       "type": "bitmap",
-      "file": "create_deepfried:font/south_american.png",
+      "file": "create_deepfried:font/flags.png",
       "ascent": 9,
       "height": 12,
       "chars": [
-        "\uE592"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/north_american.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE593"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/africa.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE58E"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/minecraft.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE588"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/canada.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE594"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/oceania.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE591"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/asia.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE58F"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/japan.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE590"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/european.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE589"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/italy.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE58D"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/greece.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE58C"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/germany.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE58B"
-      ]
-    },
-    {
-      "type": "bitmap",
-      "file": "create_deepfried:font/united_kingdom.png",
-      "ascent": 9,
-      "height": 12,
-      "chars": [
-        "\uE58A"
+        "\uE58E\uE58F\uE594\uE589\uE58B\uE58C",
+        "\uE58D\uE590\uE588\uE593\uE591\uE592",
+        "\uE58A\u0000\u0000\u0000\u0000\u0000"
       ]
     }
   ]
