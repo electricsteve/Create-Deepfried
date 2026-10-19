@@ -1,9 +1,9 @@
 
 
-<div style="text-align: center;"><img src="https://cdn.modrinth.com/data/76TqKW7O/images/b0daad9ca41d3e096a9ce8fa942b28afa2a144e9.png" width="400" height="400" alt="Deepfried Title"></div>
-<div style="text-align: center;"><strong>By the developers of Create: Bitterballen. Now maintained by ElectricSteve.</strong></div>
+<p align="center"><img src="https://cdn.modrinth.com/data/76TqKW7O/images/b0daad9ca41d3e096a9ce8fa942b28afa2a144e9.png" width="400" height="400" alt="Deepfried Title"></p>
+<p align="center"><strong>By the developers of Create: Bitterballen. Now maintained by ElectricSteve.</strong></p>
 
-<div style="text-align: center;"><img src="https://cdn.modrinth.com/data/76TqKW7O/images/575a3131b76981af050198bdac15eb7efddba058.png" width="500" height="265" alt="Pastry Shop"></div>
+<p align="center"><img src="https://cdn.modrinth.com/data/76TqKW7O/images/575a3131b76981af050198bdac15eb7efddba058.png" width="500" height="265" alt="Pastry Shop"></p>
 
 ## How to install
 
