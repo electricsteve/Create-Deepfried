@@ -9,6 +9,8 @@ plugins {
 }
 
 var modId = property("mod_id") as String
+var modName = property("mod_name") as String
+var minecraftVersion = property("minecraft_version") as String
 
 version = property("mod_version")!!
 group = property("mod_group_id")!!
@@ -58,7 +60,6 @@ configurations {
 }
 
 dependencies {
-    var minecraftVersion = property("minecraft_version") as String
     var neoVersion = property("neo_version") as String
     var createVersion = property("create_version") as String
     var ponderVersion = property("ponder_version") as String
@@ -98,7 +99,7 @@ tasks {
         options.encoding = "UTF-8" // Use the UTF-8 charset for Java compilation
     }
     withType<Jar> {
-        archiveBaseName.set("create_deepfried+${project.property("minecraft_version")}")
+        archiveBaseName.set("create_deepfried+${minecraftVersion}")
     }
 }
 
@@ -111,16 +112,23 @@ idea {
 }
 
 publishMods {
+    val changelogText: Provider<String> = providers.fileContents(
+        layout.projectDirectory.file("CHANGELOG.md")
+    ).asText.map { it.trim() }
+
     file.set(tasks.named<Jar>("jar").flatMap { it.archiveFile })
-    changelog.set("Hello!")
+    changelog.set(changelogText)
     type.set(STABLE)
     modLoaders.add("neoforge")
+    displayName.set("$modName ${project.version} ${minecraftVersion}-neoforge")
+    version.set("${project.version}+${minecraftVersion}-neoforge")
+//    dryRun.set(true)
 
     curseforge {
         projectId.set("990016")
         projectSlug.set("create-deepfried") // Required for discord webhook
         accessToken.set(providers.environmentVariable("CURSEFORGE_TOKEN"))
-        minecraftVersions.add("1.21.1")
+        minecraftVersions.add(minecraftVersion)
         client.set(true)
         server.set(true)
         requires("create-bitterballen")
@@ -128,14 +136,19 @@ publishMods {
     modrinth {
         projectId.set("76TqKW7O")
         accessToken.set(providers.environmentVariable("MODRINTH_TOKEN"))
-        minecraftVersions.add("1.21.1")
+        minecraftVersions.add(minecraftVersion)
+        environment.set(CLIENT_AND_SERVER)
+        requires("LNytGWDc", "16DuAG4k") // Create & Bitterballen
     }
     github {
         repository.set("electricsteve/create-deepfried")
         accessToken.set(providers.environmentVariable("GITHUB_TOKEN"))
-        commitish.set("1.21.1")
+        commitish.set(minecraftVersion) // The main branch, should be the same as the Minecraft version
     }
     discord {
         webhookUrl.set(providers.environmentVariable("DISCORD_WEBHOOK"))
+        dryRunWebhookUrl.set(providers.environmentVariable("DRYRUN_DISCORD_WEBHOOK"))
+        username.set(modName)
+        content.set(changelog.map { "$it\n<@&1561736800676872252>" })
     }
 }
