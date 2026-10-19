@@ -5,9 +5,10 @@ plugins {
     idea
     `maven-publish`
     id("net.neoforged.gradle.userdev") version "7.1.39"
+    id("me.modmuss50.mod-publish-plugin") version "2.2.1"
 }
 
-var mod_id = property("mod_id") as String
+var modId = property("mod_id") as String
 
 version = property("mod_version")!!
 group = property("mod_group_id")!!
@@ -16,37 +17,28 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 runs {
     configureEach {
-        // Recommended logging data for a userdev environment
-        // The markers can be added/remove as needed separated by commas.
-        // "SCAN": For mods scan.
-        // "REGISTRIES": For firing of registry events.
-        // "REGISTRYDUMP": For getting the contents of all registries.
         systemProperty("forge.logging.markers", "REGISTRIES")
-
-        // Recommended logging level for the console
-        // You can set various levels here.
-        // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
         systemProperty("forge.logging.console.level", "debug")
 
         modSource(project.sourceSets.getByName("main"))
     }
 
     create("client") {
-        systemProperty("neoforge.enabledGameTestNamespaces", mod_id)
+        systemProperty("neoforge.enabledGameTestNamespaces", modId)
     }
 
     create("server") {
-        systemProperty("neoforge.enabledGameTestNamespaces", mod_id)
+        systemProperty("neoforge.enabledGameTestNamespaces", modId)
         argument("--nogui")
     }
 
     create("gameTestServer") {
-        systemProperty("neoforge.enabledGameTestNamespaces", mod_id)
+        systemProperty("neoforge.enabledGameTestNamespaces", modId)
     }
 
     create("data") {
         // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-        arguments.addAll(listOf("--mod", mod_id, "--all", "--output", file("src/generated/resources/").absolutePath, "--existing", file("src/main/resources/").absolutePath))
+        arguments.addAll(listOf("--mod", modId, "--all", "--output", file("src/generated/resources/").absolutePath, "--existing", file("src/main/resources/").absolutePath))
     }
 }
 
@@ -60,25 +52,26 @@ repositories {
 
 configurations {
     runtimeClasspath.configure {
+        @Suppress("UnstableApiUsage")
         extendsFrom(named("localRuntime"))
     }
 }
 
 dependencies {
-    var minecraft_version = property("minecraft_version") as String
-    var neo_version = property("neo_version") as String
-    var create_version = property("create_version") as String
-    var ponder_version = property("ponder_version") as String
-    var flywheel_version = property("flywheel_version") as String
-    var registrate_version = property("registrate_version") as String
+    var minecraftVersion = property("minecraft_version") as String
+    var neoVersion = property("neo_version") as String
+    var createVersion = property("create_version") as String
+    var ponderVersion = property("ponder_version") as String
+    var flywheelVersion = property("flywheel_version") as String
+    var registrateVersion = property("registrate_version") as String
 
-    implementation("net.neoforged:neoforge:${neo_version}")
+    implementation("net.neoforged:neoforge:${neoVersion}")
 
-    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { isTransitive = false }
-    implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
-    compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
-    runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
-    implementation("com.tterrag.registrate:Registrate:${registrate_version}")
+    implementation("com.simibubi.create:create-${minecraftVersion}:${createVersion}:slim") { isTransitive = false }
+    implementation("net.createmod.ponder:ponder-neoforge:${ponderVersion}+mc${minecraftVersion}")
+    compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraftVersion}:${flywheelVersion}")
+    runtimeOnly("dev.engine-room.flywheel:flywheel-neoforge-${minecraftVersion}:${flywheelVersion}")
+    implementation("com.tterrag.registrate:Registrate:${registrateVersion}")
 
     implementation("curse.maven:create-bitterballen-918751:8853472") // Bitterballen
     implementation("curse.maven:jei-238222:5846880") //JEI
@@ -114,5 +107,35 @@ idea {
     module {
         isDownloadSources = true
         isDownloadJavadoc = true
+    }
+}
+
+publishMods {
+    file.set(tasks.named<Jar>("jar").flatMap { it.archiveFile })
+    changelog.set("Hello!")
+    type.set(STABLE)
+    modLoaders.add("neoforge")
+
+    curseforge {
+        projectId.set("990016")
+        projectSlug.set("create-deepfried") // Required for discord webhook
+        accessToken.set(providers.environmentVariable("CURSEFORGE_TOKEN"))
+        minecraftVersions.add("1.21.1")
+        client.set(true)
+        server.set(true)
+        requires("create-bitterballen")
+    }
+    modrinth {
+        projectId.set("76TqKW7O")
+        accessToken.set(providers.environmentVariable("MODRINTH_TOKEN"))
+        minecraftVersions.add("1.21.1")
+    }
+    github {
+        repository.set("electricsteve/create-deepfried")
+        accessToken.set(providers.environmentVariable("GITHUB_TOKEN"))
+        commitish.set("1.21.1")
+    }
+    discord {
+        webhookUrl.set(providers.environmentVariable("DISCORD_WEBHOOK"))
     }
 }
